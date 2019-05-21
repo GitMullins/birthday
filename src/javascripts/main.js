@@ -9,7 +9,7 @@ import 'bootstrap';
 import '../styles/main.scss';
 
 const init = () => {
-  console.error(apiKeys.firebaseKeys);
+  // console.error(apiKeys.firebaseKeys);
   firebase.initializeApp(apiKeys.firebaseKeys);
   auth.domStringBuilder();
   birthday.domStringBuilder();
