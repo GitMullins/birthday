@@ -1,21 +1,23 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import birthday from '../../components/birthday/birthday';
 
-const authDiv = document.getElementById('authDiv');
-const birfdayDiv = document.getElementById('birfdayDiv');
-const birfdayNavbar = document.getElementById('birfdayNavbar');
-const authNavbar = document.getElementById('authNavbar');
-const logoutNavbar = document.getElementById('logoutNavbar');
+const authDiv = document.getElementById('auth');
+const birfdayDiv = document.getElementById('birthday');
+const birfdayNavbar = document.getElementById('navbar-button-birthday');
+const authNavbar = document.getElementById('navbar-button-auth');
+const logoutNavbar = document.getElementById('navbar-button-logout');
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      console.error('user found');
+      // console.error(user);
       authDiv.classList.add('hide');
       birfdayDiv.classList.remove('hide');
       birfdayNavbar.classList.remove('hide');
       authNavbar.classList.add('hide');
       logoutNavbar.classList.remove('hide');
+      birthday.domStringBuilder(user.uid);
     } else {
       console.error('nope');
       authDiv.classList.remove('hide');
