@@ -1,0 +1,15 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+    "birthdays": {
+      ".indexOn": "uid"
+    },
+    "friends": {
+      ".indexOn": "uid"
+    },
+    "rsvps": {
+      ".indexOn": "birthdayId"
+    }
+  }
+}

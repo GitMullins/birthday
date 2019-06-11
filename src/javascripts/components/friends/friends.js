@@ -40,7 +40,6 @@ const deleteFriendsEvent = (e) => {
 
 const radioButtonEvent = (e) => {
   const rsvpId = e.target.closest('td').id;
-  console.error(rsvpId);
   const rsvp = {
     birthdayId: e.target.closest('table').id,
     friendId: e.target.id.split('.')[1],
